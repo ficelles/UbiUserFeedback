@@ -224,16 +224,31 @@ namespace UbiFeedbackApp
         {
             this.Dispatcher.Invoke(new Action(() =>
             {
-                _messages.Add(_message);
-                LocalPropertyChanged("Messages");
+                if (MainTabIndex != 1)
+                {
+                    _addmessages.Add(_message);
+                    LocalPropertyChanged("AddMessages");
+                }
+                else
+                {
+                    _getmessages.Add(_message);
+                    LocalPropertyChanged("GetMessages");
+                }
             }));
         }
 
-        private ObservableCollection<string> _messages = new ObservableCollection<string>();
-        public ObservableCollection<string> Messages
+        private ObservableCollection<string> _addmessages = new ObservableCollection<string>();
+        public ObservableCollection<string> AddMessages
         {
-            get { return _messages; }
-            set { _messages = value; }
+            get { return _addmessages; }
+            set { _addmessages = value; }
+        }
+
+        private ObservableCollection<string> _getmessages = new ObservableCollection<string>();
+        public ObservableCollection<string> GetMessages
+        {
+            get { return _getmessages; }
+            set { _getmessages = value; }
         }
 
         private string _userid = string.Empty;
@@ -275,6 +290,17 @@ namespace UbiFeedbackApp
         {
             get { return _filter; }
             set { _filter = value; }
+        }
+
+        private int _tabIndex = 1;
+        public int MainTabIndex
+        {
+            get { return _tabIndex; }
+            set
+            {
+                _tabIndex = value;
+                LocalPropertyChanged("MainTabIndex");
+            }
         }
 
         ObservableCollection<RatingItem> _filteritems = new ObservableCollection<RatingItem>();

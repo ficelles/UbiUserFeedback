@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TabControl>
+        <TabControl SelectedIndex="{Binding MainTabIndex}">
             <TabItem Header="Add Feedback">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -21,7 +21,7 @@
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
                         
-                        <ListBox ItemsSource="{Binding Messages}" Margin="5" />
+                        <ListBox ItemsSource="{Binding AddMessages}" Margin="5" />
 
                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Bottom" Margin="5">
                             <Grid>
@@ -77,7 +77,7 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
 
-                    <ListBox ItemsSource="{Binding Messages}" Margin="5" />
+                    <ListBox ItemsSource="{Binding GetMessages}" Margin="5" />
 
                     <Grid Grid.Row="1">
                         <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
