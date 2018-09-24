@@ -39,6 +39,7 @@ namespace UbiFeedbackApp
             _ratingitems.Add(new RatingItem("3", 3));
             _ratingitems.Add(new RatingItem("4", 4));
             _ratingitems.Add(new RatingItem("5", 5));
+            Rating = RatingItems.First();
 
             _filteritems.Add(new RatingItem("All", 0));
             _filteritems.Add(new RatingItem("1", 1));
@@ -46,6 +47,7 @@ namespace UbiFeedbackApp
             _filteritems.Add(new RatingItem("3", 3));
             _filteritems.Add(new RatingItem("4", 4));
             _filteritems.Add(new RatingItem("5", 5));
+            Filter = FilterItems.First();
 
             Loaded += MainWindow_Loaded;
         }
